@@ -14,20 +14,22 @@ public class Hero : Entity
     public float runSpeed = 5.0f;
 
     //anim
-
-    private Animator anim;
+    
+    /*
 
     public enum States
     {
         idle,
-        run
+        run,
+        pee,
+        smoke
     }
 
     public States State
     {
         get { return (States)anim.GetInteger("state"); }
         set { anim.SetInteger("state", (int)value); }
-    }
+    }*/
 
     private void Awake()
     {
