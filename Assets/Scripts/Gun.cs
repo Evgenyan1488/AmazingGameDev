@@ -2,29 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Gun : Weapon
+public class Gun : MonoBehaviour
 {
-    public float bspeed;
-    public float bdistance;
-    public float lifetime;
 
-    public int dmg;
-    public LayerMask whatisSolid;
+    public float offset = -90f;
 
     public GameObject bullet;
     public Transform shotPoint;
 
     private float timebtwshots;
     public float atackspeed;
-   
-    public Gun(float bspeed, float bdistance, float lifetime, int dmg)
-    {
-        this.bspeed = bspeed;
-        this.bdistance = bdistance;
-        this.lifetime = lifetime;
-        this.dmg = dmg;
-    }
-
 
     void Start()
     {
@@ -32,25 +19,23 @@ public class Gun : Weapon
     }
 
 
+
     void Update()
     {
-        RaycastHit2D hitinfo = Physics2D.Raycast(transform.position, transform.up, bdistance, whatisSolid);
-        if (hitinfo.collider != null)
+        Vector3 dif = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        float rotZ = Mathf.Atan2(dif.y, dif.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0f, 0f, rotZ + offset);
+        if (timebtwshots <= 0)
         {
-            if(hitinfo.collider.CompareTag("Enemy"))
+            if (Input.GetMouseButton(0))
             {
-                hitinfo.collider.GetComponent<Enemy>().GetDamage(dmg);
+                Instantiate(bullet, shotPoint.position, transform.rotation);
+                timebtwshots = atackspeed;
             }
-            Destroy(gameObject);
         }
-        transform.Translate(Vector2.right * bspeed * Time.deltaTime);
-        StartCoroutine(LifeTimeDestruction());
-    }
-
-    private IEnumerator LifeTimeDestruction()
-    {
-        yield return new WaitForSeconds(lifetime);
-        Destroy(gameObject);
-
+        else
+        {
+            timebtwshots -= Time.deltaTime;
+        }
     }
 }
