@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: f855df95ff63031499ce818a128f94a8
+=======
+guid: 9734aac103cfc044ca60176727b2f113
+>>>>>>> parent of d8355ef (Создание задатка великой игры)
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

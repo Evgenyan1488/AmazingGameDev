@@ -251,6 +251,7 @@ Transform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
 =======
@@ -364,6 +365,8 @@ Transform:
 =======
 >>>>>>> Stashed changes
 >>>>>>> parent of 9b235ac (Revert "Создание задатка великой игры")
+=======
+>>>>>>> parent of d8355ef (Создание задатка великой игры)
 --- !u!1 &1024013991
 GameObject:
   m_ObjectHideFlags: 0
@@ -528,7 +531,6 @@ GameObject:
   - component: {fileID: 1945551437}
   - component: {fileID: 1945551440}
   - component: {fileID: 1945551441}
-  - component: {fileID: 1945551443}
   - component: {fileID: 1945551439}
   - component: {fileID: 1945551438}
   - component: {fileID: 1945551442}
@@ -591,7 +593,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 0
 --- !u!114 &1945551440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -640,23 +642,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1945551443
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1945551436}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53a1eeb3378c85347a5051a72e76a0d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dmg: 0
-  attackrange: 0
-  enemy:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!1 &1971130821
 GameObject:
   m_ObjectHideFlags: 0

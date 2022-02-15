@@ -2,29 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-public class AnimController : MonoBehaviour
-{
-    protected Animator anim;
-    public enum States
-    {
-        idle,
-        run,
-        punch,
-        pee,
-        smoke
-    }
-
-    public States State
-    {
-        get { return (States)anim.GetInteger("state"); }
-        set { anim.SetInteger("state", (int)value); }
-    }
-}
-
-
-
-public class Entity : AnimController
+public class Entity : MonoBehaviour
 {
     protected int lives;
 
