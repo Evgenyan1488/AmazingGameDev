@@ -7,7 +7,7 @@ public class Hero : Entity
 
     //movement
     Rigidbody2D body;
-    
+
     float horizontal;
     float vertical;
     float moveLimiter = 0.7f;

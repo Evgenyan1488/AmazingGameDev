@@ -26,9 +26,6 @@ TextureImporter:
   - first:
       213: 423376387359592829
     second: walk_spr_7
-  - first:
-      213: -6740582238330415058
-    second: walk_spr_8
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -133,9 +130,9 @@ TextureImporter:
       name: walk_spr_0
       rect:
         serializedVersion: 2
-        x: 19
+        x: 27
         y: 9
-        width: 12
+        width: 14
         height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -154,9 +151,9 @@ TextureImporter:
       name: walk_spr_1
       rect:
         serializedVersion: 2
-        x: 67
+        x: 78
         y: 9
-        width: 14
+        width: 22
         height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -175,9 +172,9 @@ TextureImporter:
       name: walk_spr_2
       rect:
         serializedVersion: 2
-        x: 118
-        y: 9
-        width: 22
+        x: 138
+        y: 10
+        width: 26
         height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -196,9 +193,9 @@ TextureImporter:
       name: walk_spr_3
       rect:
         serializedVersion: 2
-        x: 178
-        y: 10
-        width: 26
+        x: 200
+        y: 9
+        width: 22
         height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -217,9 +214,9 @@ TextureImporter:
       name: walk_spr_4
       rect:
         serializedVersion: 2
-        x: 240
+        x: 263
         y: 9
-        width: 22
+        width: 14
         height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -238,9 +235,9 @@ TextureImporter:
       name: walk_spr_5
       rect:
         serializedVersion: 2
-        x: 303
+        x: 319
         y: 9
-        width: 14
+        width: 19
         height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -259,9 +256,9 @@ TextureImporter:
       name: walk_spr_6
       rect:
         serializedVersion: 2
-        x: 359
+        x: 375
         y: 9
-        width: 19
+        width: 26
         height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -280,28 +277,7 @@ TextureImporter:
       name: walk_spr_7
       rect:
         serializedVersion: 2
-        x: 415
-        y: 9
-        width: 26
-        height: 23
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d715bd6c49220e500800000000000000
-      internalID: 423376387359592829
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: walk_spr_8
-      rect:
-        serializedVersion: 2
-        x: 480
+        x: 440
         y: 9
         width: 19
         height: 23
@@ -312,8 +288,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e281209da24a472a0800000000000000
-      internalID: -6740582238330415058
+      spriteID: d715bd6c49220e500800000000000000
+      internalID: 423376387359592829
       vertices: []
       indices: 
       edges: []
