@@ -28,14 +28,14 @@ public class Entity : AnimController
 {
     protected int lives;
 
-    public virtual void GetDamage(int damage)
+    public void GetDamage(int damage)
     {
         lives-=damage;
         if (lives < 1)
             Die();
     }
 
-    public virtual void Die()
+    public void Die()
     {
         Destroy(this.gameObject);
     }

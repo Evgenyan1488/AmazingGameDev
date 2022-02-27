@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Hero : Entity
 {
+    //public float offset = -90f;
 
-    //movement
     Rigidbody2D body;
     
     float horizontal;
@@ -13,32 +13,14 @@ public class Hero : Entity
     float moveLimiter = 0.7f;
     public float runSpeed = 5.0f;
 
-    //anim
-    
-    /*
-
-    public enum States
-    {
-        idle,
-        run,
-        pee,
-        smoke
-    }
-
-    public States State
-    {
-        get { return (States)anim.GetInteger("state"); }
-        set { anim.SetInteger("state", (int)value); }
-    }*/
-
     private void Awake()
     {
         anim = GetComponent<Animator>();
+        body = GetComponent<Rigidbody2D>();
     }
 
     void Start()
     {
-        body = GetComponent<Rigidbody2D>();
     }
 
     void Update()
@@ -50,6 +32,9 @@ public class Hero : Entity
         else
             State = States.idle;
 
+        Vector3 dif = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        float rotZ = Mathf.Atan2(dif.y, dif.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0f, 0f, rotZ);
 
     }
 
