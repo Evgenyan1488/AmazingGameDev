@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class Fight : MonoBehaviour
+public class Fight : AnimController
 {
     public GameObject bullet;
     public Transform shotPoint;
     public Transform mytransform;
-
-
-    //public LayerMask whatisSolid;
+    public LayerMask enemy;
+    public float attackrange;
     Weapon weapon;
 
     /*public Fight(float bspeed, float bdistance, float lifetime, int dmg)
@@ -20,10 +19,13 @@ public class Fight : MonoBehaviour
         this.lifetime = lifetime;
         this.dmg = dmg;
     }*/
+
+
     private void Awake()
     {
+        //anim = GetComponent<Animator>();
+
         weapon = new Gun(5f, 5f, 0.4f, 3, bullet, shotPoint, mytransform);
-        
     }
 
     void Start()
@@ -41,6 +43,10 @@ public class Fight : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.T))
         {
             weapon.atackspeed = 0.1f;
+        }
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            weapon = new Club(4, attackrange, 0.1f, enemy, mytransform);
         }
     }
 
@@ -107,17 +113,20 @@ public class Gun : Weapon
 public class Club : Weapon
 {
     private bool isattacking;
-    private bool isrecharged;
+    private bool isrecharged = true;
 
-    public float attackrange;
-    public float attacktime;
-    public LayerMask enemy;
+    private float attackrange;
+    private float attacktime;
+    private LayerMask enemy;
+    private Transform mytransform;
 
-    public Club(int dmg, float attackrange, float attacktime)
+    public Club(int dmg, float attackrange, float attacktime, LayerMask enemy, Transform mytransform)
     {
         this.dmg = dmg;
         this.attackrange = attackrange;
         this.attacktime = attacktime;
+        this.enemy = enemy;
+        this.mytransform = mytransform;
     }
 
     void Start()
@@ -133,14 +142,15 @@ public class Club : Weapon
 
     public override void Attack()
     {
+        State = States.punch;
         if (isrecharged)
         {
             State = States.punch;
             isattacking = true;
             isrecharged = false;
-
-            StartCoroutine(AttackAnimation());
-            StartCoroutine(AttackCooldown());
+            Debug.Log("atakuyu");
+            //StartCoroutine(AttackAnimation());
+            //StartCoroutine(AttackCooldown());
         }
     }
 
@@ -158,7 +168,7 @@ public class Club : Weapon
 
     public void OnAttack()
     {
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, attackrange, enemy);
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(mytransform.position, attackrange, enemy);
 
         for (int i = 0; i < colliders.Length; i++)
             colliders[i].GetComponent<Entity>().GetDamage(dmg);

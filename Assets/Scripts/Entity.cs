@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class AnimController : MonoBehaviour
 {
-    protected Animator anim;
+    protected static Animator anim;
     public enum States
     {
         idle,
@@ -15,6 +15,9 @@ public class AnimController : MonoBehaviour
         smoke
     }
 
+    private void Awake()
+    {
+    }
     public States State
     {
         get { return (States)anim.GetInteger("state"); }

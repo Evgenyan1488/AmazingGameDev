@@ -260,7 +260,7 @@ GameObject:
   m_Component:
   - component: {fileID: 922276538}
   - component: {fileID: 922276539}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -583,6 +583,10 @@ MonoBehaviour:
   bullet: {fileID: 8860170542606103088, guid: 23229e0bc20eba640970a3fe2c6d09f2, type: 3}
   shotPoint: {fileID: 728545897}
   mytransform: {fileID: 1945551437}
+  enemy:
+    serializedVersion: 2
+    m_Bits: 8
+  attackrange: 0
 --- !u!95 &1945551442
 Animator:
   serializedVersion: 3
@@ -817,7 +821,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2146912284}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.66, y: -1.1, z: 0}
+  m_LocalPosition: {x: -1.76, y: -0.83, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1996551003}
