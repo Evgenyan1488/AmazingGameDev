@@ -2,22 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class AnimController : MonoBehaviour
 {
     protected static Animator anim;
     public enum States
     {
         idle,
-        run_dupi,
-        run_body,
+        run,
         punch,
         pee,
-        smoke,
-        Pistol_shot
+        smoke
     }
 
-    public bool legsrun;
-
+    private void Awake()
+    {
+    }
     public States State
     {
         get { return (States)anim.GetInteger("state"); }
@@ -33,7 +33,7 @@ public class Entity : AnimController
 
     public void GetDamage(int damage)
     {
-        lives--;
+        lives-=damage;
         if (lives < 1)
             Die();
     }
