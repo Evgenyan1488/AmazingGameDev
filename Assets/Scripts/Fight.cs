@@ -229,10 +229,12 @@ public abstract class Weapon : AnimController
     public float atackspeed = 0.4f;
     protected int dmg = 1;
 
+    public bool isattacking;
+    public bool isrecharged;
 
     public Transform shotPoint;
 
-    private float timebtwshots;
+    public float timebtwshots;
 
     public virtual void Attack()
     {
