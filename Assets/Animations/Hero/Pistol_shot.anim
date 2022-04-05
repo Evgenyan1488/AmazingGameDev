@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Idle
+  m_Name: Pistol_shot
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -21,7 +21,13 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: -7619955521060311784, guid: 9d405018fd74477489bff1f3a3a8d692, type: 3}
-    - time: 1
+    - time: 0.083333336
+      value: {fileID: -205010329517543952, guid: 543ae500e0ae93346be7eb3cf7235f2e, type: 3}
+    - time: 0.3
+      value: {fileID: 2049856815620022914, guid: 543ae500e0ae93346be7eb3cf7235f2e, type: 3}
+    - time: 0.51666665
+      value: {fileID: -6797563225074399646, guid: 543ae500e0ae93346be7eb3cf7235f2e, type: 3}
+    - time: 0.6666667
       value: {fileID: -7619955521060311784, guid: 9d405018fd74477489bff1f3a3a8d692, type: 3}
     attribute: m_Sprite
     path: SpTelo
@@ -43,13 +49,16 @@ AnimationClip:
       isPPtrCurve: 1
     pptrCurveMapping:
     - {fileID: -7619955521060311784, guid: 9d405018fd74477489bff1f3a3a8d692, type: 3}
+    - {fileID: -205010329517543952, guid: 543ae500e0ae93346be7eb3cf7235f2e, type: 3}
+    - {fileID: 2049856815620022914, guid: 543ae500e0ae93346be7eb3cf7235f2e, type: 3}
+    - {fileID: -6797563225074399646, guid: 543ae500e0ae93346be7eb3cf7235f2e, type: 3}
     - {fileID: -7619955521060311784, guid: 9d405018fd74477489bff1f3a3a8d692, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1.0166667
+    m_StopTime: 0.68333334
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
