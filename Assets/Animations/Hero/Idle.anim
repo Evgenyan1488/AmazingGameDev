@@ -20,11 +20,11 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: -7619955521060311784, guid: 9d405018fd74477489bff1f3a3a8d692, type: 3}
+      value: {fileID: 997355956494378684, guid: 0f419b95cf0c07a41b7a161e12ac5171, type: 3}
     - time: 1
-      value: {fileID: -7619955521060311784, guid: 9d405018fd74477489bff1f3a3a8d692, type: 3}
+      value: {fileID: 997355956494378684, guid: 0f419b95cf0c07a41b7a161e12ac5171, type: 3}
     attribute: m_Sprite
-    path: SpTelo
+    path: HeroSprite
     classID: 212
     script: {fileID: 0}
   m_SampleRate: 60
@@ -35,15 +35,15 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 3694981737
+      path: 1760258595
       attribute: 0
       script: {fileID: 0}
       typeID: 212
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: -7619955521060311784, guid: 9d405018fd74477489bff1f3a3a8d692, type: 3}
-    - {fileID: -7619955521060311784, guid: 9d405018fd74477489bff1f3a3a8d692, type: 3}
+    - {fileID: 997355956494378684, guid: 0f419b95cf0c07a41b7a161e12ac5171, type: 3}
+    - {fileID: 997355956494378684, guid: 0f419b95cf0c07a41b7a161e12ac5171, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
