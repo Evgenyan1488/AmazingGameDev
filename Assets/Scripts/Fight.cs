@@ -10,8 +10,8 @@ public class Fight : AnimController
     public Transform mytransform;
     public LayerMask enemy;
     public float attackrange;
-    Weapon weapon;
 
+<<<<<<< HEAD
     /*public Fight(float bspeed, float bdistance, float lifetime, int dmg)
     {
         this.bspeed = bspeed;
@@ -212,7 +212,7 @@ public class Fight : MonoBehaviour
             weapon.atackspeed = 0.1f;
         }
     }
-
+=======
 }
 
 
@@ -220,15 +220,28 @@ public class Fight : MonoBehaviour
 
 public abstract class Weapon : AnimController
 {
-    public float atackspeed = 0.4f;
+
     protected int dmg = 1;
+>>>>>>> Ponos
+
+    public bool isrecharged;
+    public bool isattacking;
+
+
+    public float attackspeed = 0.4f;
+    public float curreloadtime;
+    public float animationTime;
 
 
     public Transform shotPoint;
 
-    private float timebtwshots;
 
-    public virtual void Attack()
+
+    public virtual void AttackStart()
+    {
+
+    }
+    public virtual void AttackEnd()
     {
 
     }
@@ -245,7 +258,7 @@ public class Gun : Weapon
     //public LayerMask whatisSolid;
     public Transform mytransform;
     public GameObject bullet;
-    public float timebtwshots = 0.1f;
+
 
     public Gun(float bspeed, float bdistance, float lifetime, int dmg, GameObject bullet, Transform shotpoint, Transform transform)
     {
@@ -259,28 +272,39 @@ public class Gun : Weapon
     }
 
 
-    public override void Attack()
+    public override void AttackStart()
     {
-        if (timebtwshots <= 0)
-        {
-            Instantiate(bullet, shotPoint.position, mytransform.rotation);
-            timebtwshots = atackspeed;
-        }
-        else
-        {
-            timebtwshots -= Time.deltaTime;
-        }
+        Debug.Log("as");
+        isattacking = true;
+        State = States.pistol_shot;
+        curreloadtime = attackspeed;
+    }
+    public override void AttackEnd()
+    {
+        Instantiate(bullet, shotPoint.position, mytransform.rotation);
     }
 }
 
+
+
+
+
+
 public class Club : Weapon
 {
+<<<<<<< HEAD
     private bool isattacking;
     private bool isrecharged;
 
     public float attackrange;
     public float attacktime;
     public LayerMask enemy;
+=======
+    private float attackrange;
+    private float attacktime;
+    private LayerMask enemy;
+    private Transform mytransform;
+>>>>>>> Ponos
 
     public Club(int dmg, float attackrange, float attacktime)
     {
@@ -300,7 +324,7 @@ public class Club : Weapon
 
     }
 
-    public override void Attack()
+    public override void AttackStart()
     {
         if (isrecharged)
         {
@@ -311,6 +335,10 @@ public class Club : Weapon
             StartCoroutine(AttackAnimation());
             StartCoroutine(AttackCooldown());
         }
+    }
+    public override void AttackEnd()
+    {
+        
     }
 
     private IEnumerator AttackAnimation()

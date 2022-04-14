@@ -8,16 +8,28 @@ public class AnimController : MonoBehaviour
     public enum States
     {
         idle,
+<<<<<<< HEAD
         run_dupi,
         run_body,
+=======
+        run_ruki,
+>>>>>>> Ponos
         punch,
+        pistol_shot,
         pee,
         smoke,
         Pistol_shot
     }
+<<<<<<< HEAD
 
     public bool legsrun;
 
+=======
+    public bool legsrun;
+    private void Awake()
+    {
+    }
+>>>>>>> Ponos
     public States State
     {
         get { return (States)anim.GetInteger("state"); }
