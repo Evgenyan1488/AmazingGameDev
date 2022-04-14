@@ -9,12 +9,13 @@ public class AnimController : MonoBehaviour
     public enum States
     {
         idle,
-        run,
+        run_ruki,
         punch,
+        pistol_shot,
         pee,
         smoke
     }
-
+    public bool legsrun;
     private void Awake()
     {
     }

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4491589381524195958}
   - component: {fileID: 2851133081581722749}
   m_Layer: 0
-  m_Name: Pulya
+  m_Name: SniperBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -80,7 +80,7 @@ SpriteRenderer:
   m_Size: {x: 5.2, y: 2.7}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &2851133081581722749
@@ -95,8 +95,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f25db8fd25f50445ab7e615cf10774f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bspeed: 500
-  bdistance: 10
   whatisSolid:
     serializedVersion: 2
     m_Bits: 72
