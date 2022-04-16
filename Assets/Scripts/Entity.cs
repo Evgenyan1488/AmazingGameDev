@@ -11,6 +11,7 @@ public class AnimController : MonoBehaviour
         idle,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         run_dupi,
         run_body,
 =======
@@ -19,11 +20,14 @@ public class AnimController : MonoBehaviour
 =======
         run,
 >>>>>>> parent of cf42738 (sukaebanaya)
+=======
+        run,
+>>>>>>> parent of bbd2e6c (Победа)
         punch,
-        pistol_shot,
         pee,
         smoke
     }
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 <<<<<<< HEAD
@@ -31,6 +35,9 @@ public class AnimController : MonoBehaviour
 
 =======
     public bool legsrun;
+=======
+
+>>>>>>> parent of bbd2e6c (Победа)
     private void Awake()
     {
     }

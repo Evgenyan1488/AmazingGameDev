@@ -5,14 +5,13 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     //public Bullet(float bspeed, float bdistance, float lifetime, int dmg) : base(bspeed, bdistance, lifetime, dmg) { }
-    public float bspeed = 30f;
-    public float bdistance = 10f;
+    protected float bspeed = 30f;
+    protected float bdistance = 10f;
     protected float lifetime = 2f;
     protected int dmg = 1;
     public LayerMask whatisSolid;
     void Start()
     {
-
     }
 
     // Update is called once per frame

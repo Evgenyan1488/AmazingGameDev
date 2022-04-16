@@ -27,6 +27,7 @@ public class Hero : Entity
     {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         Vector3 dif = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         float rotZ = Mathf.Atan2(dif.y, dif.x) * Mathf.Rad2Deg;
@@ -35,10 +36,12 @@ public class Hero : Entity
         debug = weapon.isattacking;
 =======
 >>>>>>> parent of cf42738 (sukaebanaya)
+=======
+>>>>>>> parent of bbd2e6c (Победа)
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
-
         if (horizontal != 0 || vertical != 0)
+<<<<<<< HEAD
 <<<<<<< HEAD
         {
             legsrun = true;
@@ -82,13 +85,17 @@ public class Hero : Entity
         {
             weapon.atackspeed = 0.1f;
 =======
+=======
+            State = States.run;
+        else
+            State = States.idle;
+>>>>>>> parent of bbd2e6c (Победа)
 
-        anim.SetBool("LegsRun", (bool)legsrun);
-        
+        Vector3 dif = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        float rotZ = Mathf.Atan2(dif.y, dif.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0f, 0f, rotZ);
 
-        if (weapon.curreloadtime > 0)
-            weapon.curreloadtime -= Time.deltaTime;
-
+<<<<<<< HEAD
         if (Input.GetKey(KeyCode.Mouse0))
         {
             if (weapon.curreloadtime <= 0)
@@ -109,6 +116,8 @@ public class Hero : Entity
         }
 =======
 >>>>>>> parent of cf42738 (sukaebanaya)
+=======
+>>>>>>> parent of bbd2e6c (Победа)
     }
 
     void FixedUpdate()
@@ -120,6 +129,7 @@ public class Hero : Entity
         }
 
         body.velocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);
+<<<<<<< HEAD
     }
 <<<<<<< HEAD
 =======
@@ -127,6 +137,8 @@ public class Hero : Entity
     public void HeroAttack()
     {
         weapon.AttackEnd();
+=======
+>>>>>>> parent of bbd2e6c (Победа)
     }
 >>>>>>> Ponos
 }

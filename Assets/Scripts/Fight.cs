@@ -11,7 +11,9 @@ public class Fight : AnimController
     public Transform mytransform;
     public LayerMask enemy;
     public float attackrange;
+    Weapon weapon;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     /*public Fight(float bspeed, float bdistance, float lifetime, int dmg)
     {
@@ -185,6 +187,8 @@ public class Fight : MonoBehaviour
     //public LayerMask whatisSolid;
     Weapon weapon;
 
+=======
+>>>>>>> parent of bbd2e6c (Победа)
     /*public Fight(float bspeed, float bdistance, float lifetime, int dmg)
     {
         this.bspeed = bspeed;
@@ -192,6 +196,7 @@ public class Fight : MonoBehaviour
         this.lifetime = lifetime;
         this.dmg = dmg;
     }*/
+<<<<<<< HEAD
     private void Awake()
     {
         weapon = new Gun(5f, 5f, 0.4f, 3, bullet, shotPoint, mytransform);
@@ -217,34 +222,60 @@ public class Fight : MonoBehaviour
     }
 =======
 }
+=======
+>>>>>>> parent of bbd2e6c (Победа)
+
+
+    private void Awake()
+    {
+        //anim = GetComponent<Animator>();
+
+        weapon = new Gun(5f, 5f, 0.4f, 3, bullet, shotPoint, mytransform);
+    }
+
+    void Start()
+    {
+        
+    }
+
+<<<<<<< HEAD
+    protected int dmg = 1;
+>>>>>>> Ponos
+=======
+    void Update()
+    {
+        if (Input.GetMouseButton(0))
+        {
+            Debug.Log(weapon.atackspeed);
+            weapon.Attack();
+        }
+        if(Input.GetKeyDown(KeyCode.T))
+        {
+            weapon.atackspeed = 0.1f;
+        }
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            weapon = new Club(4, attackrange, 0.1f, enemy, mytransform);
+        }
+    }
+>>>>>>> parent of bbd2e6c (Победа)
+
+}
 
 
 
 
 public abstract class Weapon : AnimController
 {
-
+    public float atackspeed = 0.4f;
     protected int dmg = 1;
->>>>>>> Ponos
-
-    public bool isrecharged;
-    public bool isattacking;
-
-
-    public float attackspeed = 0.4f;
-    public float curreloadtime;
-    public float animationTime;
 
 
     public Transform shotPoint;
 
+    private float timebtwshots;
 
-
-    public virtual void AttackStart()
-    {
-
-    }
-    public virtual void AttackEnd()
+    public virtual void Attack()
     {
 
     }
@@ -261,7 +292,7 @@ public class Gun : Weapon
     //public LayerMask whatisSolid;
     public Transform mytransform;
     public GameObject bullet;
-
+    public float timebtwshots = 0.1f;
 
     public Gun(float bspeed, float bdistance, float lifetime, int dmg, GameObject bullet, Transform shotpoint, Transform transform)
     {
@@ -275,26 +306,23 @@ public class Gun : Weapon
     }
 
 
-    public override void AttackStart()
+    public override void Attack()
     {
-        Debug.Log("as");
-        isattacking = true;
-        State = States.pistol_shot;
-        curreloadtime = attackspeed;
-    }
-    public override void AttackEnd()
-    {
-        Instantiate(bullet, shotPoint.position, mytransform.rotation);
+        if (timebtwshots <= 0)
+        {
+            Instantiate(bullet, shotPoint.position, mytransform.rotation);
+            timebtwshots = atackspeed;
+        }
+        else
+        {
+            timebtwshots -= Time.deltaTime;
+        }
     }
 }
 
-
-
-
-
-
 public class Club : Weapon
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
     private bool isattacking;
     private bool isrecharged;
@@ -303,6 +331,11 @@ public class Club : Weapon
     public float attacktime;
     public LayerMask enemy;
 =======
+=======
+    private bool isattacking;
+    private bool isrecharged = true;
+
+>>>>>>> parent of bbd2e6c (Победа)
     private float attackrange;
     private float attacktime;
     private LayerMask enemy;
@@ -327,7 +360,7 @@ public class Club : Weapon
 
     }
 
-    public override void AttackStart()
+    public override void Attack()
     {
         if (isrecharged)
         {
@@ -338,10 +371,6 @@ public class Club : Weapon
             StartCoroutine(AttackAnimation());
             StartCoroutine(AttackCooldown());
         }
-    }
-    public override void AttackEnd()
-    {
-        
     }
 
     private IEnumerator AttackAnimation()
