@@ -19,18 +19,16 @@ AnimationClip:
   m_FloatCurves: []
   m_PPtrCurves:
   - curve:
-    - time: 0.016666668
-      value: {fileID: 948881501409208427, guid: 544771bf599165b4d9b385aee4dffcf3, type: 3}
-    - time: 0.18333334
-      value: {fileID: -3557601679621701929, guid: 544771bf599165b4d9b385aee4dffcf3, type: 3}
-    - time: 0.35
-      value: {fileID: -2820167400256596450, guid: 544771bf599165b4d9b385aee4dffcf3, type: 3}
-    - time: 0.5
-      value: {fileID: 3129752133318806704, guid: 544771bf599165b4d9b385aee4dffcf3, type: 3}
-    - time: 0.6
-      value: {fileID: -3557601679621701929, guid: 544771bf599165b4d9b385aee4dffcf3, type: 3}
-    - time: 0.7
-      value: {fileID: -6165877807871987422, guid: 544771bf599165b4d9b385aee4dffcf3, type: 3}
+    - time: 0
+      value: {fileID: 1636041250450076381, guid: 81f90242c37102d4fa55237a649fca43, type: 3}
+    - time: 0.1
+      value: {fileID: -3546799295728678330, guid: 81f90242c37102d4fa55237a649fca43, type: 3}
+    - time: 0.21666667
+      value: {fileID: -4219508278664444952, guid: 81f90242c37102d4fa55237a649fca43, type: 3}
+    - time: 0.31666666
+      value: {fileID: 431109924827699864, guid: 81f90242c37102d4fa55237a649fca43, type: 3}
+    - time: 0.41666666
+      value: {fileID: 3076428414800028706, guid: 81f90242c37102d4fa55237a649fca43, type: 3}
     attribute: m_Sprite
     path: HeroSprite
     classID: 212
@@ -50,18 +48,17 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 948881501409208427, guid: 544771bf599165b4d9b385aee4dffcf3, type: 3}
-    - {fileID: -3557601679621701929, guid: 544771bf599165b4d9b385aee4dffcf3, type: 3}
-    - {fileID: -2820167400256596450, guid: 544771bf599165b4d9b385aee4dffcf3, type: 3}
-    - {fileID: 3129752133318806704, guid: 544771bf599165b4d9b385aee4dffcf3, type: 3}
-    - {fileID: -3557601679621701929, guid: 544771bf599165b4d9b385aee4dffcf3, type: 3}
-    - {fileID: -6165877807871987422, guid: 544771bf599165b4d9b385aee4dffcf3, type: 3}
+    - {fileID: 1636041250450076381, guid: 81f90242c37102d4fa55237a649fca43, type: 3}
+    - {fileID: -3546799295728678330, guid: 81f90242c37102d4fa55237a649fca43, type: 3}
+    - {fileID: -4219508278664444952, guid: 81f90242c37102d4fa55237a649fca43, type: 3}
+    - {fileID: 431109924827699864, guid: 81f90242c37102d4fa55237a649fca43, type: 3}
+    - {fileID: 3076428414800028706, guid: 81f90242c37102d4fa55237a649fca43, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.71666664
+    m_StopTime: 0.43333334
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -80,4 +77,11 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0.31666666
+    functionName: HeroAttack
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0

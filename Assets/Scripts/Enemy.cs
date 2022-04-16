@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Enemy : Entity
 {
+    
 
     void Start()
     {
-        lives = 3;
+        lives = 1;
     }
 
 

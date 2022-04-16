@@ -16,18 +16,26 @@ public class Hero : Entity
 
     public GameObject bullet;
     public Transform shotPoint;
+    public Transform punchpoint;
     public Transform mytransform;
     public LayerMask enemy;
     public float attackrange;
     Weapon weapon;
 
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(punchpoint.position, attackrange);
+    }
+
+    
 
     private void Awake()
     {
         anim = GetComponent<Animator>();
         body = GetComponent<Rigidbody2D>();
 
-        weapon = new Gun(5f, 5f, 0.4f, 3, bullet, shotPoint, mytransform);
+        weapon = new Gun(0.4f, bullet, shotPoint, mytransform);
     }
 
     void Start()
@@ -39,7 +47,7 @@ public class Hero : Entity
         Vector3 dif = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         float rotZ = Mathf.Atan2(dif.y, dif.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0f, 0f, rotZ);
-        debug = weapon.isattacking;
+
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
 
@@ -67,19 +75,36 @@ public class Hero : Entity
             if (weapon.curreloadtime <= 0)
             {
                 weapon.AttackStart();
-                StartCoroutine(WaitForAtc(0.2f));
-                //StartCoroutine(WaitForReload(0.01f));
+                StartCoroutine(WaitForAtc(weapon.attackspeed - 0.005f));
             }
         }
-        if (Input.GetKeyDown(KeyCode.T))
+        if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            weapon.attackspeed = 0.1f;
+            weapon = new Club(1, 0.5f, attackrange, enemy, punchpoint);
         }
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            weapon = new Club(4, attackrange, 0.1f, enemy, mytransform);
+            weapon = new Gun(0.4f, bullet, shotPoint, mytransform);
         }
     }
+
+   
+
+    public IEnumerator WaitForAtc(float time)
+    {
+        yield return new WaitForSeconds(time);
+        Debug.Log("suka");
+        weapon.isattacking = false;
+    }
+
+
+
+    public void HeroAttack()
+    {
+        weapon.AttackEnd();
+    }
+
+
 
     void FixedUpdate()
     {
@@ -89,23 +114,5 @@ public class Hero : Entity
             vertical *= moveLimiter;
         }
         body.velocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);
-    }
-
-    public IEnumerator WaitForAtc(float time)
-    {
-        yield return new WaitForSeconds(time);
-        Debug.Log("suka");
-        weapon.isattacking = false;
-    }
-    public IEnumerator WaitForReload(float time)
-    {
-        yield return new WaitForSeconds(time);
-        Debug.Log("rabotaet");
-        weapon.isrecharged = false;
-    }
-
-    public void HeroAttack()
-    {
-        weapon.AttackEnd();
     }
 }

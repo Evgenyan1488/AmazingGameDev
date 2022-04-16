@@ -48,21 +48,18 @@ public abstract class Weapon : AnimController
 
 public class Gun : Weapon
 {
-    protected float bspeed = 5f;
-    public float bdistance = 5f;
-    protected float lifetime = 0.4f;
+    //protected float bspeed = 5f;
+    //public float bdistance = 5f;
+    //protected float lifetime = 0.4f;
 
     //public LayerMask whatisSolid;
     public Transform mytransform;
     public GameObject bullet;
 
 
-    public Gun(float bspeed, float bdistance, float lifetime, int dmg, GameObject bullet, Transform shotpoint, Transform transform)
+    public Gun(float atkspeed, GameObject bullet, Transform shotpoint, Transform transform)
     {
-        this.bspeed = bspeed;
-        this.bdistance = bdistance;
-        this.lifetime = lifetime;
-        this.dmg = dmg;
+        attackspeed = atkspeed;
         this.bullet = bullet;
         this.shotPoint = shotpoint;
         this.mytransform = transform;
@@ -71,7 +68,6 @@ public class Gun : Weapon
 
     public override void AttackStart()
     {
-        Debug.Log("as");
         isattacking = true;
         State = States.pistol_shot;
         curreloadtime = attackspeed;
@@ -90,15 +86,14 @@ public class Gun : Weapon
 public class Club : Weapon
 {
     private float attackrange;
-    private float attacktime;
     private LayerMask enemy;
     private Transform mytransform;
 
-    public Club(int dmg, float attackrange, float attacktime, LayerMask enemy, Transform mytransform)
+    public Club(int dmg, float atkspeed, float attackrange, LayerMask enemy, Transform mytransform)
     {
+        attackspeed = atkspeed;
         this.dmg = dmg;
         this.attackrange = attackrange;
-        this.attacktime = attacktime;
         this.enemy = enemy;
         this.mytransform = mytransform;
     }
@@ -116,41 +111,16 @@ public class Club : Weapon
 
     public override void AttackStart()
     {
+        isattacking = true;
         State = States.punch;
-        if (isrecharged)
-        {
-            State = States.punch;
-            isattacking = true;
-            isrecharged = false;
-            Debug.Log("atakuyu");
-            //StartCoroutine(AttackAnimation());
-            //StartCoroutine(AttackCooldown());
-        }
+        curreloadtime = attackspeed;
+        Debug.Log("atakuyu");
     }
     public override void AttackEnd()
     {
-        
-    }
-
-    private IEnumerator AttackAnimation()
-    {
-        yield return new WaitForSeconds(0.4f);
-        isattacking = false;
-    }
-
-    private IEnumerator AttackCooldown()
-    {
-        yield return new WaitForSeconds(0.1f);
-        isrecharged = true;
-    }
-
-    public void OnAttack()
-    {
         Collider2D[] colliders = Physics2D.OverlapCircleAll(mytransform.position, attackrange, enemy);
-
+        Debug.Log("tichka");
         for (int i = 0; i < colliders.Length; i++)
-            colliders[i].GetComponent<Entity>().GetDamage(dmg);
+            colliders[i].GetComponent<Enemy>().GetDamage(dmg);
     }
-
-
 }
