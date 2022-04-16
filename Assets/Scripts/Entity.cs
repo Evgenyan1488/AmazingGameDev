@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class AnimController : MonoBehaviour
 {
     protected static Animator anim;
@@ -9,19 +10,23 @@ public class AnimController : MonoBehaviour
     {
         idle,
 <<<<<<< HEAD
+<<<<<<< HEAD
         run_dupi,
         run_body,
 =======
         run_ruki,
 >>>>>>> Ponos
+=======
+        run,
+>>>>>>> parent of cf42738 (sukaebanaya)
         punch,
         pistol_shot,
         pee,
-        smoke,
-        Pistol_shot
+        smoke
     }
 <<<<<<< HEAD
 
+<<<<<<< HEAD
     public bool legsrun;
 
 =======
@@ -30,6 +35,11 @@ public class AnimController : MonoBehaviour
     {
     }
 >>>>>>> Ponos
+=======
+    private void Awake()
+    {
+    }
+>>>>>>> parent of cf42738 (sukaebanaya)
     public States State
     {
         get { return (States)anim.GetInteger("state"); }
@@ -45,7 +55,7 @@ public class Entity : AnimController
 
     public void GetDamage(int damage)
     {
-        lives--;
+        lives-=damage;
         if (lives < 1)
             Die();
     }

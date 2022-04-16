@@ -398,6 +398,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!1 &1693735874
 GameObject:
   m_ObjectHideFlags: 0
@@ -480,6 +481,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+=======
+>>>>>>> parent of cf42738 (sukaebanaya)
 --- !u!1 &1812406333
 GameObject:
   m_ObjectHideFlags: 0
@@ -563,6 +566,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 933204b58c1ce0f47ab58dc0d6a227b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   legsrun: 0
 <<<<<<< HEAD
 --- !u!1 &1900476793
@@ -649,6 +653,8 @@ SpriteRenderer:
   m_SpriteSortPoint: 0
 =======
 >>>>>>> Ponos
+=======
+>>>>>>> parent of cf42738 (sukaebanaya)
 --- !u!1 &1945551436
 GameObject:
   m_ObjectHideFlags: 0
@@ -659,6 +665,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1945551437}
   - component: {fileID: 1945551440}
+  - component: {fileID: 1945551441}
   - component: {fileID: 1945551439}
   - component: {fileID: 1945551438}
   - component: {fileID: 1945551442}
@@ -684,10 +691,13 @@ Transform:
   - {fileID: 728545897}
   - {fileID: 1989583554}
 <<<<<<< HEAD
+<<<<<<< HEAD
   - {fileID: 1900476794}
 =======
   - {fileID: 1693735875}
 >>>>>>> Ponos
+=======
+>>>>>>> parent of cf42738 (sukaebanaya)
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -740,11 +750,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a21f33939f9f6049ba9ed3abff68089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   legsrun: 0
   debug: 0
   runSpeed: 9
 <<<<<<< HEAD
   legsrun: 0
+=======
+  runSpeed: 9
+>>>>>>> parent of cf42738 (sukaebanaya)
 --- !u!114 &1945551441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -757,6 +771,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f855df95ff63031499ce818a128f94a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   offset: 0
 =======
 >>>>>>> Ponos
@@ -765,6 +780,15 @@ MonoBehaviour:
   atackspeed: 0.3
 
   mytransform: {fileID: 1945551437}
+=======
+  bullet: {fileID: 8860170542606103088, guid: 23229e0bc20eba640970a3fe2c6d09f2, type: 3}
+  shotPoint: {fileID: 728545897}
+  mytransform: {fileID: 1945551437}
+  enemy:
+    serializedVersion: 2
+    m_Bits: 8
+  attackrange: 0
+>>>>>>> parent of cf42738 (sukaebanaya)
 --- !u!95 &1945551442
 Animator:
   serializedVersion: 3
@@ -846,7 +870,7 @@ GameObject:
   - component: {fileID: 1989583554}
   - component: {fileID: 1989583555}
   m_Layer: 0
-  m_Name: SpTelo
+  m_Name: HeroSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -905,13 +929,13 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
-  m_Sprite: {fileID: -7619955521060311784, guid: 9d405018fd74477489bff1f3a3a8d692, type: 3}
+  m_SortingOrder: 2
+  m_Sprite: {fileID: 997355956494378684, guid: 0f419b95cf0c07a41b7a161e12ac5171, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.12, y: 0.23}
+  m_Size: {x: 0.6, y: 1.15}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

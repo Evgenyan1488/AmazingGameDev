@@ -2,32 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class Hero : Entity
 {
     //public float offset = -90f;
 
     Rigidbody2D body;
-    public bool debug;
+    
     float horizontal;
     float vertical;
     float moveLimiter = 0.7f;
     public float runSpeed = 5.0f;
 
-    public GameObject bullet;
-    public Transform shotPoint;
-    public Transform mytransform;
-    public LayerMask enemy;
-    public float attackrange;
-    Weapon weapon;
-
-
     private void Awake()
     {
         anim = GetComponent<Animator>();
         body = GetComponent<Rigidbody2D>();
-
-        weapon = new Gun(5f, 5f, 0.4f, 3, bullet, shotPoint, mytransform);
     }
 
     void Start()
@@ -37,16 +26,20 @@ public class Hero : Entity
     void Update()
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         Vector3 dif = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         float rotZ = Mathf.Atan2(dif.y, dif.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0f, 0f, rotZ);
 >>>>>>> Ponos
         debug = weapon.isattacking;
+=======
+>>>>>>> parent of cf42738 (sukaebanaya)
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
 
         if (horizontal != 0 || vertical != 0)
+<<<<<<< HEAD
         {
             legsrun = true;
             if (!weapon.isattacking)
@@ -65,10 +58,17 @@ public class Hero : Entity
 <<<<<<< HEAD
         
         anim.SetBool("LegsRun", (bool)legsrun);
+=======
+            State = States.run;
+        else
+            State = States.idle;
+
+>>>>>>> parent of cf42738 (sukaebanaya)
         Vector3 dif = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         float rotZ = Mathf.Atan2(dif.y, dif.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0f, 0f, rotZ);
 
+<<<<<<< HEAD
         if (weapon.timebtwshots > 0)
             weapon.timebtwshots -= Time.deltaTime;
         
@@ -107,6 +107,8 @@ public class Hero : Entity
         {
             weapon = new Club(4, attackrange, 0.1f, enemy, mytransform);
         }
+=======
+>>>>>>> parent of cf42738 (sukaebanaya)
     }
 
     void FixedUpdate()
@@ -116,20 +118,8 @@ public class Hero : Entity
             horizontal *= moveLimiter;
             vertical *= moveLimiter;
         }
-        body.velocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);
-    }
 
-    public IEnumerator WaitForAtc(float time)
-    {
-        yield return new WaitForSeconds(time);
-        Debug.Log("suka");
-        weapon.isattacking = false;
-    }
-    public IEnumerator WaitForReload(float time)
-    {
-        yield return new WaitForSeconds(time);
-        Debug.Log("rabotaet");
-        weapon.isrecharged = false;
+        body.velocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);
     }
 <<<<<<< HEAD
 =======

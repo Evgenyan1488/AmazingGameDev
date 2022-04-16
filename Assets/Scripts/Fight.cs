@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -167,6 +168,8 @@ public class Club : Weapon
 }
 */
 
+=======
+>>>>>>> parent of cf42738 (sukaebanaya)
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -197,7 +200,7 @@ public class Fight : MonoBehaviour
 
     void Start()
     {
-
+        
     }
 
     void Update()
